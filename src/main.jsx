@@ -1,12 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import './tailwind.css'
-import './base.css'
-import App from './App'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Simple from './components/Simple';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Simple />
   </React.StrictMode>,
-  document.getElementById('root')
-)
+  document.getElementById('simpleRoot')
+);

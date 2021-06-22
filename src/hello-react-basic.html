@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <title>Hello React</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+  <!-- Don't use this in production: -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <link rel="stylesheet" href="/tailwind.css">
+  <link rel="stylesheet" href="/base.css">
+</head>
+<body>
+
+  <section class="m-8 space-y-4">
+
+    <h1 class="font-serif text-4xl">Hello React</h1>
+
+    <div class="border rounded p-4">
+      <div id="root"></div>
+      <script type="text/babel">
+        ReactDOM.render(
+          <h1>This is root</h1>,
+          document.getElementById('root')
+        );
+      </script>
+    </div>
+
+    <div class="border rounded p-4">
+      <div id="like_button_container"></div>
+      <script>
+        const e = React.createElement;
+
+        class LikeButton extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = { liked: false };
+          }
+
+          render() {
+            if (this.state.liked) {
+              return 'You liked this.';
+            }
+
+            return e(
+              'button', {
+                onClick: () => this.setState({ liked: true }),
+                className: "btn"
+              }, 'Like'
+            );
+          }
+        }
+
+        ReactDOM.render(
+          e(LikeButton),
+          document.querySelector('#like_button_container')
+        );
+      </script>
+    </div>
+
+  </section>
+
+</body>
+</html>
