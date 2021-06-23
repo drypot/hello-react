@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Simple from './components/Simple';
+import Example from './components/Example';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Simple />
+    <Example/>
   </React.StrictMode>,
-  document.getElementById('simpleRoot')
+  document.getElementById('root')
 );
